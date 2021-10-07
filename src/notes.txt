@@ -1,4 +1,4 @@
-This is an unorganized collection of curious questions
+This is an unorganized collection of questions and answers
 
 
 1)What is the difference between use abc; and mod abc;?
@@ -13,3 +13,23 @@ ANS-mod abc; declares a module.use abc;brings a nameabc` into scope.
 -use = from
 This is because of the Rust Prelude: https://doc.rust-lang.org/std/prelude/
 
+
+2)What is unsafe in Rust?
+Ans)To switch to unsafe Rust, use the unsafe keyword and then start a new block that holds the unsafe code.
+You can take five actions in unsafe Rust, called unsafe superpowers, that you can't in safe Rust.
+Those superpowers include the ability to: Dereference a raw pointer.
+
+3)What are lifetimes in rust?
+https://doc.rust-lang.org/book/lifetimes.html
+And)Every reference in Rust has a lifetime, which is the scope for which that reference is valid.
+Most of the time lifetimes are implicit and inferred.
+
+4)Meaning of & in Rust?
+https://www.quora.com/What-is-the-meaning-of-in-Rust
+Ans)First is the `&` symbol which has similar meaning : (a reference to a variable) as in C/C++.
+
+5)What is & and ** in rust?[More generic answer in the sense of C++]
+Ans)https://stackoverflow.com/questions/36335342/meaning-of-the-ampersand-and-star-symbols-in-rust
+
+6)Why cant we compare literal to borrowed integers?
+Ans)https://stackoverflow.com/questions/40677086/why-isnt-it-possible-to-compare-a-borrowed-integer-to-a-literal-integer
