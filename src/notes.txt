@@ -1,0 +1,15 @@
+This is an unorganized collection of curious questions
+
+
+1)What is the difference between use abc; and mod abc;?
+For example I need to do use std::env; if I want to access stuff in the std::env namespace.
+But I can’t do the same thing for a module contained in the my own project (crate?).
+Instead I have to do mod mymod; to make the contents of mymod accessible from current scope.
+Why do have two ways of doing the same thing?
+
+ANS-mod abc; declares a module.use abc;brings a nameabc` into scope.
+ rust - Python
+-mod = import
+-use = from
+This is because of the Rust Prelude: https://doc.rust-lang.org/std/prelude/
+
