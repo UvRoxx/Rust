@@ -29,6 +29,8 @@ fn lender() {
     let mut vec: Vev<i32>::new();
     vec.push(1);
     borrower(&vec);
+    vec.push(1);//This time as the value was borrowed its not de-allocated and hence lender
+    // still has access to it after  borrower finished its operation
 }
 
 fn borrower(vec: Vec<i32>) {
