@@ -11,7 +11,6 @@
 // mod tuples;
 // mod arrays;
 // mod vectors;
-mod conditionals;
 
 fn main() {
     // This is the syntax for accessing the lib and :: to open a given pub function from that lib
