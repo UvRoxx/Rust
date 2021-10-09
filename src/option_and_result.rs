@@ -16,14 +16,27 @@ pub fn testing_options() {
 // execution to end, this is why its is very unsafe to use unwrap in production code
 pub fn testing_result() {
     fn give(drink: Option<&str>) {
+        // When passing multiple conditons that can cover the same input in this case
+        // Condition - 1 and Condition-2 are both valid for input milk, in this case the only the
+        // first condition specified will get executed
         match drink {
-            Some(inner) => println!("{}? HOw nice", inner),
+            Some("milk") => println!("Hey this is Milk"),//condition 1
+            Some(inner) => println!("{}? HOw nice", inner),// condition 2
             None => println!("No Drink? Oh Well..."),
         }
     }
     fn give_vegan(drink: Option<&str>) {
+
+        // Using Match to achieve the similar result as unwrap
+        match drink {
+            Some("milk") => println!("Hey this is milk"),
+            None => println!("No Drink? Oh Well..."),
+            _ => println!("What is this drink"),
+        }
+
+        // Using Unwrap in an unsafe manner
         let inside = drink.unwrap();
-        if inside == "milk" { panic!("Police!!"); }
+        if inside == "milk" { panic!("Hey Thats Milk!!"); }
 
         // Checking for None is a safe way to use unwrap in rust
         if drink == None { println!("What no drink") } else {
