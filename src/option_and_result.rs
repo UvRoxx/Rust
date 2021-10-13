@@ -19,6 +19,7 @@ pub fn testing_result() {
         // When passing multiple conditons that can cover the same input in this case
         // Condition - 1 and Condition-2 are both valid for input milk, in this case the only the
         // first condition specified will get executed
+        // This will raise warning , this is called "unreachable patten"
         match drink {
             Some("milk") => println!("Hey this is Milk"),//condition 1
             Some(inner) => println!("{}? HOw nice", inner),// condition 2
@@ -55,4 +56,15 @@ pub fn testing_result() {
         give_vegan(nothing);
     }
     start();
+}
+
+// Result is Also an enum but instead of wrapping in a Some
+// result always wraps a value in Ok or Err
+pub fn testing_options_more_further() {
+    enum Result<T, E> {
+        Ok(T),
+        Err(E),
+    }
+    let x = Ok(7);
+    let y = Err("Error");
 }
